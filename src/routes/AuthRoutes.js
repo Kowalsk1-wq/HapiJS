@@ -9,20 +9,24 @@ class AuthRoutes extends BaseRoute {
 
   login() {
     return {
-      path: "/auth",
       method: "GET",
-      config: {
-        tags: ["api"],
-        description: "Users' Authentication",
-        notes: "Realiza O Login De Um User"
+      path: "/auth/{name}",
+      handler: function(request, h) {
+        return `Hello ${request.params.name}!`;
       },
-      handler: (req, headers) => {
-        return this.db.read();
+      options: {
+        validate: {
+          params: {
+            name: Joi.string()
+              .min(3)
+              .max(10)
+          }
+        }
       }
     };
   }
 
-  register() {
+  /*register() {
     return {
       path: "/auth",
       method: "POST",
@@ -42,7 +46,9 @@ class AuthRoutes extends BaseRoute {
               .max(100)
               .required()
               .email(),
-            password: Joi.string().max(100).required()
+            password: Joi.string()
+              .max(100)
+              .required()
           }
         }
       },
@@ -75,7 +81,7 @@ class AuthRoutes extends BaseRoute {
         return this.db.delete(id);
       }
     };
-  }
+  }*/
 }
 
 module.exports = AuthRoutes;
