@@ -1,0 +1,27 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "API Made With Hapi.JS",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "nodemon src/main.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^19.0.5",
+    "@hapi/joi": "^17.1.0",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "figlet": "^1.2.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.9",
+    "validator": "^12.2.0"
+  }
+}
