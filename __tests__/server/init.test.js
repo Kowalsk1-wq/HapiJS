@@ -5,11 +5,10 @@ describe('Server', function () {
     it('Server Successful Inited', async () => {
         try {
             await server.start();
-            status = 1
         } catch (error) {
             console.error('Erro:', error);
-            status = 0
+            status = 1
         }
-        expect(status).toBe(1);
+        expect(status).toBe(0);
     })
 })
